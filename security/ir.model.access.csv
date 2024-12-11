@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_escuela_escuela,escuela.escuela,model_escuela_escuela,base.group_user,1,1,1,1
+access_escuela_estudiante,escuela.estudiante,model_escuela_estudiante,base.group_user,1,1,1,1
+access_escuela_asignatura,escuela.asignatura,model_escuela_asignatura,base.group_user,1,1,1,1
+access_escuela_grupo,escuela.grupo,model_escuela_grupo,base.group_user,1,1,1,1

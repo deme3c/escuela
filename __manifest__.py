@@ -2,14 +2,15 @@
 {
     'name': "escuela",
 
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
+    'summary': "Módulo para la gestión de una escuela",
 
     'description': """
-Long description of module's purpose
+Módulo para gestionar estudiantes, asignaturas y grupos en una escuela.
+Permite la creación y administración de estos modelos mediante vistas personalizadas.
     """,
 
-    'author': "My Company",
-    'website': "https://www.yourcompany.com",
+    'author': "deme3c",
+    'website': "https://github.com/deme3c",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -22,9 +23,11 @@ Long description of module's purpose
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',  # Archivo de permisos
+        'views/estudiante_vista.xml',    # Vista de estudiantes
+        'views/asignatura_vista.xml',    # Vista de asignaturas
+        'views/grupo_vista.xml',         # Vista de grupos
+        'views/escuela_menu.xml',        # Menús y acciones
     ],
     # only loaded in demonstration mode
     'demo': [

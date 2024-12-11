@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+
+        <record id="view_escuela_asignatura_form" model="ir.ui.view">
+            <field name="name">escuela.asignatura.form</field>
+            <field name="model">escuela.asignatura</field>
+            <field name="arch" type="xml">
+                <form string="Asignatura">
+                    <sheet>
+                        <group>
+                            <field name="codigo"/>
+                            <field name="nombre"/>
+                            <field name="numero_horas"/>
+                            <field name="grupos_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_escuela_asignatura_tree" model="ir.ui.view">
+            <field name="name">escuela.asignatura.tree</field>
+            <field name="model">escuela.asignatura</field>
+            <field name="arch" type="xml">
+                <tree string="Asignaturas">
+                    <field name="codigo"/>
+                    <field name="nombre"/>
+                    <field name="numero_horas"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_escuela_asignatura_kanban" model="ir.ui.view">
+            <field name="name">escuela.asignatura.kanban</field>
+            <field name="model">escuela.asignatura</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="nombre"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global">
+                                <strong><field name="nombre"/></strong>
+                                <div><field name="codigo"/></div>
+                                <div><field name="numero_horas"/></div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        
+    </data>
+</odoo>
