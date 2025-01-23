@@ -1,3 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from . import models
+from . import Estudiante
+from . import Asignatura
+from . import Grupo

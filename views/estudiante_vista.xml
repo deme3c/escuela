@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-
-
+        <!-- Vista FORM de Estudiantes -->
         <record id="view_escuela_estudiante_form" model="ir.ui.view">
             <field name="name">escuela.estudiante.form</field>
             <field name="model">escuela.estudiante</field>
@@ -20,26 +19,26 @@
             </field>
         </record>
 
-
-        <record id="view_escuela_estudiante_tree" model="ir.ui.view">
-            <field name="name">escuela.estudiante.tree</field>
+        <!-- Vista LIST de Estudiantes -->
+        <record id="view_escuela_estudiante_list" model="ir.ui.view">
+            <field name="name">escuela.estudiante.list</field>
             <field name="model">escuela.estudiante</field>
             <field name="arch" type="xml">
-                <tree string="Estudiantes">
+                <list string="Estudiantes">
                     <field name="nombre"/>
                     <field name="apellidos"/>
                     <field name="edad"/>
-                </tree>
+                </list>
             </field>
         </record>
 
- 
-
+        <!-- Vista KANBAN de Estudiantes -->
         <record id="view_escuela_estudiante_kanban" model="ir.ui.view">
             <field name="name">escuela.estudiante.kanban</field>
             <field name="model">escuela.estudiante</field>
             <field name="arch" type="xml">
                 <kanban>
+                    <!-- Campos a mostrar en kanban -->
                     <field name="nombre"/>
                     <field name="apellidos"/>
                     <templates>
@@ -54,7 +53,5 @@
                 </kanban>
             </field>
         </record>
-
-        
     </data>
 </odoo>

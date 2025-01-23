@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-
+        <!-- Vista FORM de Grupos -->
         <record id="view_escuela_grupo_form" model="ir.ui.view">
             <field name="name">escuela.grupo.form</field>
             <field name="model">escuela.grupo</field>
@@ -20,26 +20,29 @@
             </field>
         </record>
 
-
-        <record id="view_escuela_grupo_tree" model="ir.ui.view">
-            <field name="name">escuela.grupo.tree</field>
+        <!-- Vista LIST de Grupos -->
+        <record id="view_escuela_grupo_list" model="ir.ui.view">
+            <field name="name">escuela.grupo.list</field>
             <field name="model">escuela.grupo</field>
             <field name="arch" type="xml">
-                <tree string="Grupos">
+                <list string="Grupos">
                     <field name="descripcion"/>
                     <field name="modulo_profesional"/>
                     <field name="curso"/>
-                </tree>
+                </list>
             </field>
         </record>
 
-
+        <!-- Vista KANBAN de Grupos -->
         <record id="view_escuela_grupo_kanban" model="ir.ui.view">
             <field name="name">escuela.grupo.kanban</field>
             <field name="model">escuela.grupo</field>
             <field name="arch" type="xml">
                 <kanban>
+                    <!-- Campos a mostrar en kanban -->
                     <field name="descripcion"/>
+                    <field name="modulo_profesional"/>
+                    <field name="curso"/>
                     <templates>
                         <t t-name="kanban-box">
                             <div class="oe_kanban_global">
@@ -52,7 +55,5 @@
                 </kanban>
             </field>
         </record>
-
-
     </data>
 </odoo>

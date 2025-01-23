@@ -28,6 +28,7 @@ Permite la creación y administración de estos modelos mediante vistas personal
         'views/asignatura_vista.xml',    # Vista de asignaturas
         'views/grupo_vista.xml',         # Vista de grupos
         'views/escuela_menu.xml',        # Menús y acciones
+        'reports/report_grupos.xml',     # Generar reportes
     ],
     # only loaded in demonstration mode
     'demo': [

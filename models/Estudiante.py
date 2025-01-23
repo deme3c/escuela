@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from odoo import models, fields, api
 
 class Estudiante(models.Model):
@@ -8,5 +10,4 @@ class Estudiante(models.Model):
     apellidos = fields.Char(string='Apellidos', required=True)
     edad = fields.Integer(string='Edad', required=True)
     grupo_id = fields.Many2one('escuela.grupo', string='Grupo', ondelete='set null')
-    
     

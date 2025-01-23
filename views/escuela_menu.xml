@@ -5,29 +5,33 @@
         <record id="action_window_estudiante" model="ir.actions.act_window">
             <field name="name">Estudiantes</field>
             <field name="res_model">escuela.estudiante</field>
-            <field name="view_mode">tree,form,kanban</field>
+            <!-- Usamos "list,form,kanban" -->
+            <field name="view_mode">list,form,kanban</field>
         </record>
 
         <!-- Acción de ventana para Asignaturas -->
         <record id="action_window_asignatura" model="ir.actions.act_window">
             <field name="name">Asignaturas</field>
             <field name="res_model">escuela.asignatura</field>
-            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_mode">list,form,kanban</field>
         </record>
 
         <!-- Acción de ventana para Grupos -->
         <record id="action_window_grupo" model="ir.actions.act_window">
             <field name="name">Grupos</field>
             <field name="res_model">escuela.grupo</field>
-            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_mode">list,form,kanban</field>
         </record>
 
         <!-- Menú principal -->
         <menuitem name="Escuela" id="menu_escuela_root" sequence="1"/>
 
         <!-- Submenús -->
-        <menuitem name="Estudiantes" id="menu_escuela_estudiantes" parent="menu_escuela_root" action="action_window_estudiante"/>
-        <menuitem name="Asignaturas" id="menu_escuela_asignaturas" parent="menu_escuela_root" action="action_window_asignatura"/>
-        <menuitem name="Grupos" id="menu_escuela_grupos" parent="menu_escuela_root" action="action_window_grupo"/>
+        <menuitem name="Estudiantes" id="menu_escuela_estudiantes"
+                  parent="menu_escuela_root" action="action_window_estudiante"/>
+        <menuitem name="Asignaturas" id="menu_escuela_asignaturas"
+                  parent="menu_escuela_root" action="action_window_asignatura"/>
+        <menuitem name="Grupos" id="menu_escuela_grupos"
+                  parent="menu_escuela_root" action="action_window_grupo"/>
     </data>
 </odoo>

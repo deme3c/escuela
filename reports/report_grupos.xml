@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Acción que define nuestro reporte QWeb -->
+        <record id="action_report_grupos" model="ir.actions.report">
+            <field name="name">Grupos PDF</field>
+            <field name="model">escuela.grupo</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">escuela.report_grupos</field>
+            <field name="print_report_name">'Grupos - ' + object.descripcion</field>
+        </record>
+
+        <!-- Plantilla QWeb (HTML) que renderiza el PDF -->
+        <!-- El id se puede llamar como quieras; lo importante es que el 'report_name' 
+             de arriba sea 'escuela.report_grupos' y la clase Python use la misma cadena. -->
+        <template id="report_grupos_document">
+            <!-- Usamos la plantilla de Odoo para formato PDF: web.basic_layout -->
+            <t t-call="web.basic_layout">
+
+                <div class="page">
+                    <!-- “docs” será la lista de grupos que viene de la clase Python -->
+                    <t t-foreach="docs" t-as="g">
+                        <h2>Grupo: <t t-esc="g.descripcion"/></h2>
+                        <p><strong>Módulo:</strong> <t t-esc="g.modulo_profesional"/></p>
+                        <p><strong>Curso:</strong> <t t-esc="g.curso"/></p>
+
+                        <!-- Estudiantes -->
+                        <h3>Estudiantes</h3>
+                        <ul>
+                            <t t-foreach="g.estudiantes_ids" t-as="est">
+                                <li>
+                                    <t t-esc="est.nombre"/> <t t-esc="est.apellidos"/>
+                                    (Edad: <t t-esc="est.edad"/>)
+                                </li>
+                            </t>
+                        </ul>
+
+                        <!-- Asignaturas -->
+                        <h3>Asignaturas</h3>
+                        <ul>
+                            <t t-foreach="g.asignaturas_ids" t-as="asg">
+                                <li>
+                                    <strong><t t-esc="asg.nombre"/></strong> 
+                                    (Código: <t t-esc="asg.codigo"/>, 
+                                     Horas: <t t-esc="asg.numero_horas"/>)
+                                </li>
+                            </t>
+                        </ul>
+
+                        <hr style="margin:30px 0px;"/>
+                    </t>
+                </div>
+
+            </t>
+        </template>
+
+    </data>
+</odoo>
